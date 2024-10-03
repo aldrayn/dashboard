@@ -5,13 +5,15 @@ import seaborn as sns
 from grafik import grafik_distribusi, pertanyaan_1, pertanyaan_2, pertanyaan_3, pertanyaan_4
 import streamlit as st
 from correlation import pearson, pointbiserial, phi_coefficient, crammersv
+import os
 
+dir = os.path.abspath(os.curdir)
 
 # Preparing Dataset
-day_df   = pd.read_csv('day.csv', index_col = 'instant')
-hour_df  = pd.read_csv('hour.csv', index_col = 'instant')
-day_dash  = pd.read_csv('day_ori_scale.csv',  index_col = 'instant')
-hour_dash = pd.read_csv('hour_ori_scale.csv', index_col = 'instant')
+day_df   = pd.read_csv(f'{dir}/day.csv', index_col = 'instant')
+hour_df  = pd.read_csv(f'{dir}/hour.csv', index_col = 'instant')
+day_dash  = pd.read_csv(f'{dir}/day_ori_scale.csv',  index_col = 'instant')
+hour_dash = pd.read_csv(f'{dir}/hour_ori_scale.csv', index_col = 'instant')
 
 day_dist  = grafik_distribusi(day_dash)
 hour_dist = grafik_distribusi(hour_dash)

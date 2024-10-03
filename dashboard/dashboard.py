@@ -8,7 +8,6 @@ from correlation import pearson, pointbiserial, phi_coefficient, crammersv
 import os
 
 script_dir = os.path.dirname(os.path.realpath(__file__))
-df= pd.read_csv(f"{script_dir}/data.csv")
 
 # Preparing Dataset
 day_df   = pd.read_csv(f'{script_dir}/day.csv', index_col = 'instant')

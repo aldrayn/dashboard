@@ -7,13 +7,14 @@ import streamlit as st
 from correlation import pearson, pointbiserial, phi_coefficient, crammersv
 import os
 
-dir = os.path.abspath(os.curdir)
+script_dir = os.path.dirname(os.path.realpath(__file__))
+df= pd.read_csv(f"{script_dir}/data.csv")
 
 # Preparing Dataset
-day_df   = pd.read_csv('https://github.com/aldrayn/tugas_analisis_data/blob/main/dashboard/day.csv', index_col = 'instant')
-hour_df  = pd.read_csv('https://github.com/aldrayn/tugas_analisis_data/blob/main/dashboard/hour.csv', index_col = 'instant')
-day_dash  = pd.read_csv('https://github.com/aldrayn/tugas_analisis_data/blob/main/dashboard/day_ori_scale.csv',  index_col = 'instant')
-hour_dash = pd.read_csv('https://github.com/aldrayn/tugas_analisis_data/blob/main/dashboard/hour_ori_scale.csv', index_col = 'instant')
+day_df   = pd.read_csv(f'{script_dir}/day.csv', index_col = 'instant')
+hour_df  = pd.read_csv(f'{script_dir}/hour.csv', index_col = 'instant')
+day_dash  = pd.read_csv(f'{script_dir}/day_ori_scale.csv',  index_col = 'instant')
+hour_dash = pd.read_csv(f'{script_dir}/hour_ori_scale.csv', index_col = 'instant')
 
 day_dist  = grafik_distribusi(day_dash)
 hour_dist = grafik_distribusi(hour_dash)

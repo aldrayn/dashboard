@@ -25,7 +25,7 @@ st.title('Tugas Analisis Data dengan Python')
 if menu == 'Introduction' :
     st.header('Introduction')
     
-    st.image('images/images1.jpg')
+    st.image(f'{script_dir}/images/images1.jpg')
     
     st.write('')
     st.markdown(f'''

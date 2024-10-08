@@ -1,1 +1,1 @@
-https://dashboard-b8cbolf4j7dvrjumstuf59.streamlit.app/
+https://aldrayn-dashboard1.streamlit.app/

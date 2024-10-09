@@ -11,7 +11,6 @@ from sklearn.feature_selection import SelectKBest, chi2
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score,f1_score
-from tqdm.notebook import tqdm
 
 script_dir = os.path.dirname(os.path.realpath(__file__))
 
@@ -66,7 +65,7 @@ acc = []
 f1  = []
 
 # Loop untuk memilih fitur terbaik dan menghitung skor
-for feature in tqdm(range(10, 200)):
+for feature in range(10, 200):
     chi2_features = SelectKBest(chi2, k=feature)
     X_kbest_features = chi2_features.fit_transform(train_tf_idf.values, y_train)
 

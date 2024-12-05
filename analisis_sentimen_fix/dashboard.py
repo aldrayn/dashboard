@@ -105,7 +105,7 @@ elif menu == 'Insights' :
     st.markdown("<h3 style='text-align: center;'>WordCloud Sentimen Positif</h3>", unsafe_allow_html=True)
     
 
-    data_positif = data[data['Labeling '] == 'positif']
+    data_positif = data[data['Labeling'] == 'positif']
 
     with st.container() :
         text_positif = ' '.join(data_positif["clean_text"].values.tolist())

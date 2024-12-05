@@ -88,7 +88,7 @@ elif menu == 'Insights' :
     st.header('Insights')
     
     st.markdown("<h3 style='text-align: center;'>Jumlah Sentimen tiap Channel</h3>", unsafe_allow_html=True)
-    '''
+    
     with st.container() :
         sentimen_tiap_channel = pd.pivot_table(index = 'nama_channel', columns = 'Labeling ', aggfunc = 'size', data = ori_df, fill_value = 0, margins =True)
 
@@ -98,7 +98,7 @@ elif menu == 'Insights' :
         st.pyplot(fig)
 
         with st.expander('Insights') :
-            st.write('Bla-bla')'''
+            st.write('Bla-bla')
         
     colors = sns.color_palette("viridis", n_colors = 3)
     

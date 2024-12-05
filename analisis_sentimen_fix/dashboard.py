@@ -20,7 +20,7 @@ data = pd.read_csv(f'{script_dir}/dataset/clean_dataset.csv', index_col = 0)
 
 data.dropna(axis = 0, inplace = True)
 
-data = data[data['Labeling '] != 'netral']
+data = data[data['Labeling'] != 'netral']
 
 sw_df = pd.read_csv(f'{script_dir}/dataset/stopwords_indonesian.csv', index_col = 0)
 
@@ -90,7 +90,7 @@ elif menu == 'Insights' :
     st.markdown("<h3 style='text-align: center;'>Jumlah Sentimen tiap Channel</h3>", unsafe_allow_html=True)
     
     with st.container() :
-        sentimen_tiap_channel = pd.pivot_table(index = 'nama_channel', columns = 'Labeling ', aggfunc = 'size', data = ori_df, fill_value = 0, margins =True)
+        sentimen_tiap_channel = pd.pivot_table(index = 'nama_channel', columns = 'Labeling', aggfunc = 'size', data = ori_df, fill_value = 0, margins =True)
 
         fig, ax = plt.subplots()
         sentimen_tiap_channel.plot(kind = 'bar', ax = ax)
@@ -105,7 +105,7 @@ elif menu == 'Insights' :
     st.markdown("<h3 style='text-align: center;'>WordCloud Sentimen Positif</h3>", unsafe_allow_html=True)
     
 
-    data_positif = data[data['Labeling '] == 'positif']
+    data_positif = data[data['Labeling'] == 'positif']
 
     with st.container() :
         text_positif = ' '.join(data_positif["clean_text"].values.tolist())
@@ -125,7 +125,7 @@ elif menu == 'Insights' :
 
     st.markdown("<h3 style='text-align: center;'>WordCloud Sentimen Negatif</h3>", unsafe_allow_html=True)
 
-    data_negatif = data[data['Labeling '] == 'negatif']
+    data_negatif = data[data['Labeling'] == 'negatif']
 
     with st.container() :
         text_negatif = ' '.join(data_negatif["clean_text"].values.tolist())

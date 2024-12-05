@@ -14,9 +14,9 @@ from sklearn.metrics import classification_report, confusion_matrix, accuracy_sc
 
 script_dir = os.path.dirname(os.path.realpath(__file__))
 
-ori_df = pd.read_excel(f'{script_dir}/dataset/fix_dataset.xlsx', index_col = 0)
+ori_df = pd.read_excel(f'{script_dir}/dataset/dataset_fix.xlsx', index_col = 0)
 
-data = pd.read_csv(f'{script_dir}/dataset/clean_fix_dataset.csv', index_col = 0)
+data = pd.read_csv(f'{script_dir}/dataset/0.csv', index_col = 0)
 
 data.dropna(axis = 0, inplace = True)
 
